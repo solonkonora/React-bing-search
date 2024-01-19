@@ -5,12 +5,13 @@
 //*- it needs a way to get input from the users, we will use a text field here
 //*- needs to display chat conversations
 
-
-import { useLocalStorage } from "@uidotdev/usehooks"
+import React from "react"
+import { useLocalStorage } from "@uidotdev/usehooks"  // this hook contains about 149 useCasese
 import './App.module.css'
-import api from './api/bing'
+import api from './api/api'
 import styles from "./styles.module.css"
 import ChatBubble from './component/ChatBubbles'
+import ChatInput from "./component/ChatInput"
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
   return (
     <div className={styles.container}>
       <div className={styles.chatContainer}>
-  {messages.map((item, index) => {
+  {messages.reverse().map((item, index) => {
     return <ChatBubble
         key={`${item.text}-${index}`}
         origin={item.origin}
@@ -43,7 +44,7 @@ function App() {
       />
   })}
   </div>
-  <chatInput onSubmit={sendMessage}/>
+  <ChatInput onSendMessage={sendMessage}/>
 </div>
 )
 }

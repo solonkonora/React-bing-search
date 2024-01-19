@@ -12,16 +12,15 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    /* gap-items: center; */
+    gap-items: center;
     gap: 20px;
 }
 
 .button {
     width: 100px;
     height: 70px;
-    border-radius: 3px;
+    border-radius: 10px;
     border: solid;
-    display: flex;
     align-items: center;
     background-color: wheat;
 }

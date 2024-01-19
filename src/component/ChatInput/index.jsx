@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types"
 import styles from './styles.module.css';
 
 const ChatInput = ({ onSendMessage }) => {
@@ -32,5 +33,9 @@ const ChatInput = ({ onSendMessage }) => {
     </div>
   );
 };
+
+ChatInput.propTypes = {
+  onSendMessage: PropTypes.func
+}
 
 export default ChatInput;
