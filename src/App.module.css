@@ -16,9 +16,9 @@
   overflow-y: auto;
 }
 
-.chatContainer::-webkit-scrollbar {
+/* .chatContainer::-webkit-scrollbar {
   width: 8px;
-}
+} */
 
 .chatContainer::-webkit-scrollbar-thumb {
   background-color: #888;
