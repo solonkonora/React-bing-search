@@ -19,14 +19,14 @@ const ChatInput = ({ onSendMessage }) => {
   };
 
   return (
-    <>
+    <div className={styles.general}>
 {/* <div className={styles.errorMessage}>
         <span className={styles.errorMessagemessage}>error message ...</span>
-      </div>
+      </div>*/}
 
       <div className={styles.messageBox}>
         <span className={styles.messageBoxText}>. . . loading</span>
-      </div> */}
+      </div> 
 
       <div className={styles.container}>
         <form onSubmit={handleFormSubmit}>
@@ -41,7 +41,7 @@ const ChatInput = ({ onSendMessage }) => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

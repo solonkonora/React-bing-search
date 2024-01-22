@@ -5,6 +5,7 @@
 //*- it needs a way to get input from the users, we will use a text field here
 //*- needs to display chat conversations
 
+// eslint-disable-next-line no-unused-vars
 import React from "react"
 import { useLocalStorage } from "@uidotdev/usehooks"  // this hook contains about 149 useCasese
 import './App.module.css'

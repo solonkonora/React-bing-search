@@ -1,4 +1,8 @@
-/* .messageBox {
+.general {
+    position: fixed;
+    bottom: 0;
+}
+.messageBox {
     width: 40vw;
     height: 70px;
     padding: 8px;
@@ -8,7 +12,7 @@
     color: #333;
     margin-bottom: 16px;
     justify-content: flex-start;
-  }   */
+  }  
 
 .input {
     width: 83vw;
