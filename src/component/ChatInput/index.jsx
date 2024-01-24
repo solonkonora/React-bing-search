@@ -3,50 +3,34 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.module.css";
 
-const ChatInput = ({ onSendMessage }) => {
-  const [inputValue, setInputValue] = useState("");
+const ChatInput = ({onSubmit}) => {
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
+  const [inputValue, setInputValue] = React.useState("")
+  
+  const handleChange = (event) => {
+      const textValue = event.target.value;
+      setInputValue(textValue)
+  }
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    if (inputValue.trim() !== "") {
-      onSendMessage(inputValue);
-      setInputValue("");
-    }
-  };
+  const handleSend = () => {
+      if(inputValue.trim()) {
+          onSubmit(inputValue);
+          setInputValue("")
+      }
+  }
 
-  return (
-    <div className={styles.general}>
-{/* <div className={styles.errorMessage}>
-        <span className={styles.errorMessagemessage}>error message ...</span>
-      </div>*/}
-
-      <div className={styles.messageBox}>
-        <span className={styles.messageBoxText}>. . . loading</span>
-      </div> 
-
-      <div className={styles.container}>
-        <form onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            className={styles.input}
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-          <button className={styles.button}>
-            <span className={styles.buttonText}>Send</span>
-          </button>
-        </form>
+  return <div className={styles.container}>
+      <input className={styles.input} type="text" value={inputValue} onChange={handleChange} />
+      <button onClick={handleSend} className={styles.button}>
+          <p className={styles.buttonText}>
+          Send
+          </p>
+      </button>
       </div>
-    </div>
-  );
-};
+}
 
 ChatInput.propTypes = {
-  onSendMessage: PropTypes.func,
-};
+  onSubmit: PropTypes.func
+}
 
-export default ChatInput;
+export default ChatInput
